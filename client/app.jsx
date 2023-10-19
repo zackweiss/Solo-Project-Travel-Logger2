@@ -4,16 +4,18 @@ import Map, { Marker } from 'react-map-gl';
 // import 'mapbox-gl/dist/mapbox-gl.css'
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import axios from 'axios';
+import  Login from './Login';
+import  Register  from './Register';
 
 function App() {
-
+  const myStorage = window.localStorage;
   const [locations, setLocations] = useState([{longitude: 0, latitude: 0}]);
   const [viewport, setViewport] = useState({
     longitude: 45,
     latitude: -70,
     zoom: 14
   })
-  const [currentUser, setCurrentUser] = useState('Zack')
+  const [currentUser, setCurrentUser] = useState(null)
   useEffect(() => {
     const getLocations = async () => {
       const response = await axios.get('/locations')
@@ -22,10 +24,26 @@ function App() {
     }
    getLocations();
   }, [])
-
+  
+  const [seenLogin, setSeenLogin] = useState(false)
+  const [seenRegister, setSeenRegister] = useState(false)
+  function toggleLogin () {
+    setSeenLogin(!seenLogin);
+  }
+  function toggleRegister () {
+    setSeenRegister(!seenRegister);
+  }
+  
 
   return (
+    
     <div>
+      <div>
+        <button onClick={toggleLogin}>Login</button>
+          {seenLogin ? <Login toggleLogin={toggleLogin} /> : null}
+          <button onClick={toggleRegister}>Register</button>
+          {seenRegister ? <Register toggleRegister={toggleRegister} /> : null}
+      </div>
       <Map
       container = {'map'}
       projection = {'globe'}
