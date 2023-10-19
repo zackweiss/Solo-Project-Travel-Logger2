@@ -1,14 +1,14 @@
 import React from 'react';
 import { useState } from 'react'
+import axios from 'axios';
 
 
 function Register (props) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
-  function handleLogin(e) {
+  async function handleLogin(e) {
       e.preventDefault()
-      props.toggleRegister()
   }
 
   return (
