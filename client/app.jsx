@@ -60,7 +60,7 @@ function App() {
       <Map
       container = {'map'}
       projection = {'globe'}
-      mapboxAccessToken="pk.eyJ1IjoiendlaXNzMTg4MSIsImEiOiJjbG53azMydTcwOHNiMm9vMzBhN3M0a3k5In0.9InLK9I7aNrL8gBwS47L7g"
+      mapboxAccessToken=""
       style={{width: '100vw', height: '100vh'}}
       mapStyle="mapbox://styles/zweiss1881/clnwlvxx0004801p65zd2ehzm"
       onDblClick={handleAddLocation}
