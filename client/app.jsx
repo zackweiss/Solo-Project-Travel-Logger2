@@ -8,7 +8,6 @@ import  Login from './Login';
 import  Register  from './Register';
 
 function App() {
-  const myStorage = window.localStorage;
   const [locations, setLocations] = useState([{longitude: 0, latitude: 0}]);
   const [viewport, setViewport] = useState({
     longitude: 45,

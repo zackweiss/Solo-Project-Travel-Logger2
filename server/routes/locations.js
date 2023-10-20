@@ -23,17 +23,6 @@ router.get('/', async(req, res) => {
   }
 });
 
-router.delete('/', async(req, res) => {
-  // try{
-  //   const deletedLocation = await Location.findOneAndDelete({
-  //     _id: req.body._id
-  //   })
-  //   console.log(req.body)
-  //   res.status(200).json(deletedLocation);
-  // } catch(err) {
-  //   res.status(500).json(err);
-  // }
-  console.log(req)
-})
+
 
 module.exports = router;
